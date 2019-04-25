@@ -1,0 +1,23 @@
+{
+	"folders":
+	[
+		{
+			"file_exclude_patterns":
+			[
+				"*.sqlite3",
+				"yarn.lock"
+			],
+			"folder_exclude_patterns":
+			[
+				"**/__pycache__",
+				"htmlcov",
+				"static",
+				"media",
+				"venv",
+				"node_modules",
+				"dist"
+			],
+			"path": "."
+		}
+	]
+}
