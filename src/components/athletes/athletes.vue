@@ -10,7 +10,7 @@
 
 <script>
 // import ItemsFields from './FieldsDefs.js'
-import CssConfig from '../VuetableCssConfig.js'
+import CssConfig from '../../VuetableCssConfig.js'
 export default {
   data () {
     return {

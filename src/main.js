@@ -3,6 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import BootstrapVue from "bootstrap-vue"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-vue/dist/bootstrap-vue.css"
+import VueResource from 'vue-resource'
+import Vuetable from 'vuetable-2'
+
+Vue.use(BootstrapVue)
+Vue.use(VueResource)
+Vue.component("vuetable", Vuetable)
 
 Vue.config.productionTip = false
 
