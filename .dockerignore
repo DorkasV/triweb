@@ -1,0 +1,5 @@
+*.sublime-workspace
+.env
+/.git
+/.nuxt
+/node_modules
