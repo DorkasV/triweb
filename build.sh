@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t triweb .
+docker build -t dorkasv/triweb .
