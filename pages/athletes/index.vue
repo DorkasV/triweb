@@ -58,6 +58,7 @@ var client = new coreapi.Client()
 export default {
   data () {
     return {
+      title: 'Athletes',
       fields: AthletesFields,
       css: CssConfig,
       athletesData: null,
@@ -68,6 +69,11 @@ export default {
       ],
       moreParams: {
       }
+    }
+  },
+  head () {
+    return {
+      title: this.$store.getters.getSiteTitle(this.title)
     }
   },
   mounted () {

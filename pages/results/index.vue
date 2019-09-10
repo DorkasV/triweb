@@ -54,10 +54,16 @@ var client = new coreapi.Client()
 export default {
   data () {
     return {
+      title: 'Results',
       perPage: 10,
       resultsData: null,
       fields: ResultsFields,
       css: CssConfig
+    }
+  },
+  head () {
+    return {
+      title: this.$store.getters.getSiteTitle(this.title)
     }
   },
   mounted () {
