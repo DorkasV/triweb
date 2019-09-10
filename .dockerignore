@@ -2,4 +2,5 @@
 .env
 /.git
 /.nuxt
+/build.sh
 /node_modules
