@@ -87,6 +87,7 @@ export default [
   {
     title: 'Total Time',
     name: 'total_time',
+    callback: 'timePlaces',
     dataClass: 'text-center',
     titleClass: 'text-center'
   }

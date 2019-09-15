@@ -72,6 +72,9 @@ export default {
     },
     runPace (data) {
       // return 60/(distance/1000/time/24)
+    },
+    timePlaces (value) {
+      return value.toFixed(2)
     }
   }
 }
