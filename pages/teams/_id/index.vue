@@ -6,7 +6,7 @@
       style="max-width: 30rem;"
       class="mb-2"
     >
-      <template v-if="(teamData||{}).city">{{((teamData||{}).city||{}).name}}, {{(((teamData||{}).city||{}).country||{}).name}}</template>
+      {{((teamData||{}).city||{}).name}}, {{(((teamData||{}).city||{}).country||{}).name}}
     </b-card>
 
     <vuetable
@@ -42,12 +42,12 @@ export default {
     return {
       perPage: 10,
       moreParams: {
-        team: this.$route.params.id
+        team: this.$route.params.team
       },
       teamData: null,
       fields: TeamFields,
       css: CssConfig,
-      teamId: this.$route.params.id
+      teamId: this.$route.params.team
     }
   },
   mounted () {

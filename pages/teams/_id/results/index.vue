@@ -31,7 +31,7 @@ export default {
       teamResultsData: null,
       fields: TeamResultsFields,
       css: CssConfig,
-      teamId: this.$route.params.id,
+      teamId: this.$route.params.team,
       athleteId: this.$route.params.athlete,
       eventId: this.$route.params.event
     }

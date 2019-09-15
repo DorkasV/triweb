@@ -1,5 +1,6 @@
 <template>
   <b-container fluid>
+    {{ $route.params }}
     <b-card
       v-if="resultsData"
       :title="title"
@@ -37,10 +38,12 @@ export default {
   },
   computed: {
     title () {
-      return this.athleteFullName(this.resultsData[0].athlete) + ' on ' + this.resultsData[0].event.name
+      return 'TITLE'
+      // athleteFullName(resultsData[0].athlete) + ' on ' + resultsData[0].event.name
     },
     subtitle () {
-      return ((this.resultsData[0]||{}).event||{}).event_date, (((this.resultsData[0]||{}).event||{}).city||{}).name, ((((this.resultsData[0]||{}).event||{}).city||{}).country||{}).name
+      return 'ZEE'
+      // {{resultsData[0].event.event_date}}, {{resultsData[0].event.city.name}}, {{resultsData[0].event.city.country.name}}
     }
   },
   mounted () {

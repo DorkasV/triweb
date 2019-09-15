@@ -62,7 +62,7 @@ export default {
       eventId: this.$route.params.id,
       moreParams: {
         event: this.$route.params.id,
-        distance: 1
+        distance: 4
       }
     }
   },

@@ -111,7 +111,7 @@ export default {
       this.$refs.athletes.refresh()
     },
     teamClick (value) {
-      this.$router.push({ name: 'teams-id', params: { id: value.team.id } })
+      this.$router.push({ name: 'teams-id', params: { id: value } })
       // FIXME NE TEN EINA
       // this.$router.push(`/TeamResults/${value.event.id}/${value.team.id}`)
     },
