@@ -94,11 +94,11 @@ export default {
       this.$router.push({ name: 'athletes-id', params: { id: value }})
     },
     teamClick (value) {
-      // this.$router.push({ name: 'team-id-results', params: {
-      //   id: value.event.id,
-      //   team: value.team.id
-      // }})
-      // this.$router.push(`/TeamResults/${}/${value.team.id}`)
+      this.$router.push({ name: 'teams-id-event', params: {
+        event: value.event.id,
+        id: value.team.id
+      }})
+      // this.$router.push(`/TeamResults/${value.event.id}/${value.team.id}`)
     },
     onPaginationData(paginationData) {
       this.$refs.pagination.setPaginationData(paginationData)
