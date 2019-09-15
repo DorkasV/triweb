@@ -1,9 +1,7 @@
 <template>
   <b-container fluid>
-    <p>{{ resultsData }}</p>
     <b-card
-      v-if="resultsData.length"
-      :title="resultsData[0].athlete.first_name + ' ' + resultsData[0].athlete.last_name + ', ' + countAge(resultsData[0].athlete.birth_date)"
+      :title="((resultsData[0]||{}).athlete||{}).first_name + ' ' + ((resultsData[0]||{}).athlete||{}).last_name + ', ' + countAge(((resultsData[0]||{}).athlete||{}).birth_date)"
       tag="article"
       style="max-width: 30rem;"
       class="mb-2"
@@ -67,6 +65,9 @@ export default {
       }})
     },
     countAge (value) {
+      if (!value) {
+        return ''
+      }
       return moment().diff(value, 'years', false)
     },
     runPace (data) {

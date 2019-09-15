@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <b-container>
     <b-row>
       <b-col cols="3">
         <b-row>
@@ -24,7 +24,7 @@
         @vuetable-pagination:change-page="onChangePage">
       </vuetable-pagination>
     </div>
-  </div>
+  </b-container>
 </template>
 
 <script>
