@@ -61,6 +61,12 @@ export default {
           // Return value is in 'result'
           this.resultsData = result.data
       })
+    },
+    timeFormat (value) {
+      if (!value) {
+        return
+      }
+      return value.substring(0,11)
     }
   }
 }

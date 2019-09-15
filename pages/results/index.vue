@@ -109,6 +109,12 @@ export default {
     },
     updateTable() {
       this.$refs.results.refresh()
+    },
+    timeFormat (value) {
+      if (!value) {
+        return
+      }
+      return value.substring(0,11)
     }
   }
 }
