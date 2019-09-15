@@ -72,6 +72,12 @@ export default {
     },
     runPace (data) {
       // return 60/(distance/1000/time/24)
+    },
+    timeFormat (value) {
+      if (!value) {
+        return
+      }
+      return value.substring(0,11)
     }
   }
 }
