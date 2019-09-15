@@ -72,12 +72,6 @@ export default {
     },
     runPace (data) {
       // return 60/(distance/1000/time/24)
-    },
-    timePlaces (value) {
-      if (!value) {
-        return
-      }
-      return parseFloat(value).toFixed(2)
     }
   }
 }
