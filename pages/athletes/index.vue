@@ -20,6 +20,9 @@
           </b-col>
         </b-row>
       </b-col>
+      <b-col cols="3">
+        <b-form-input v-model="moreParams.search" placeholder="Search..."></b-form-input>
+      </b-col>
     </b-row>
 
     <vuetable
@@ -68,12 +71,18 @@ export default {
         // { field: 'posid', direction: 'asc' }
       ],
       moreParams: {
+        search: ''
       }
     }
   },
   head () {
     return {
       title: this.$store.getters.getSiteTitle(this.title)
+    }
+  },
+  watch: {
+    'moreParams.search'() {
+      this.$refs.athletes.refresh()
     }
   },
   mounted () {

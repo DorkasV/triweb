@@ -10,10 +10,13 @@
           </b-col>
         </b-row>
       </b-col>
+      <b-col cols="3">
+        <b-form-input v-model="moreParams.search" placeholder="Search..."></b-form-input>
+      </b-col>
     </b-row>
     <vuetable
       id="Events" ref="events" :api-url="`/api/events/`" :per-page="perPage" pagination-path='pagination'
-      data-path='data' @vuetable:pagination-data="onPaginationData"
+      data-path='data' @vuetable:pagination-data="onPaginationData" :append-params="moreParams"
       :fields="fields" :css="css.table" @vuetable:row-clicked="(dataItem, event) => rowClicked(dataItem, event)"
     >
     </vuetable>
@@ -36,11 +39,19 @@ export default {
       perPage: 10,
       fields: EventsFields,
       css: CssConfig,
-      eventsData: []
+      eventsData: [],
+      moreParams: {
+        search: ''
+      }
+    }
+  },
+  watch: {
+    'moreParams.search'() {
+      this.$refs.events.refresh()
     }
   },
   mounted () {
-    this.getData()
+    // this.getData()
   },
   methods:{
     eventPlace (value) {

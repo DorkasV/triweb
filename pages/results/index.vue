@@ -10,10 +10,13 @@
           </b-col>
         </b-row>
       </b-col>
+      <b-col cols="3">
+        <b-form-input v-model="moreParams.search" placeholder="Search..."></b-form-input>
+      </b-col>
     </b-row>
     <vuetable
       id="Results" ref="results" api-url="/api/results/" :per-page="perPage" pagination-path='pagination'
-      data-path='data' @vuetable:pagination-data="onPaginationData"
+      data-path='data' @vuetable:pagination-data="onPaginationData" :append-params="moreParams"
       :fields="fields" :css="css.table" @vuetable:row-clicked="(dataItem, event) => rowClicked(dataItem, event)"
     >
       <template slot="event" slot-scope="props">
@@ -58,7 +61,10 @@ export default {
       perPage: 10,
       resultsData: null,
       fields: ResultsFields,
-      css: CssConfig
+      css: CssConfig,
+      moreParams: {
+        search: ''
+      }
     }
   },
   head () {
@@ -66,8 +72,13 @@ export default {
       title: this.$store.getters.getSiteTitle(this.title)
     }
   },
+  watch: {
+    'moreParams.search'() {
+      this.$refs.results.refresh()
+    }
+  },
   mounted () {
-    this.getData()
+    // this.getData()
   },
   methods:{
     athleteFullName (value) {
