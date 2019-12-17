@@ -64,7 +64,7 @@ export default {
       }
       client.action(schema, action, params).then((result) => {
         // Return value is in 'athletes'
-        this.resultsData = result.data
+        this.resultsData = JSON.parse(JSON.stringify(result.data))
         
         const groupedMap = [...result.data.sort((a, b) => (a.total_time > b.total_time) - (a.total_time < b.total_time))
           .reduce((r,c) => (r.set(c.distance.id, r.has(c.distance.id) ? 
