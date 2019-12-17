@@ -71,7 +71,9 @@ export default {
           [...r.get(c.distance.id), c] : [c]), r), new Map()).values()]
 
         groupedMap.forEach((element) => {
-          this.bestResultsData.push(element[0])
+          if (element.total_place) {
+            this.bestResultsData.push(element[0])
+          }
         }, this)
       })
     },
