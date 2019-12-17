@@ -42,7 +42,6 @@
       </template>
     </vuetable>
     <div class="vuetable-pagination ui basic segment grid">
-      <vuetable-pagination-info ref="paginationInfo"></vuetable-pagination-info>
       <vuetable-pagination ref="pagination"
         :css="css.pagination"
         @vuetable-pagination:change-page="onChangePage">
@@ -111,7 +110,6 @@ export default {
     },
     onPaginationData(paginationData) {
       this.$refs.pagination.setPaginationData(paginationData)
-      this.$refs.paginationInfo.setPaginationData(paginationData)
     },
     onChangePage(page) {
       this.$refs.athletes.changePage(page)
