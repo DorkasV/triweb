@@ -7,6 +7,18 @@
       class="mb-2"
     >
     </b-card>
+    <b-card v-if="bestResultsData" title="Best Performance" tag="article" class="mb-2">
+      <vuetable
+        id="BestAthleteResults" ref="bestAthleteResults" :api-mode="false" :data="bestResultsData"
+        :fields="fieldsAthleteResults" :css="css.table" @vuetable:row-clicked="(dataItem, event) => rowClicked(dataItem, event)"
+      >
+        <template slot="event" slot-scope="props">
+          <b-button size="sm" variant="light" @click.stop="eventClick(props.rowData.event.id)">
+            {{props.rowData.event.name}}
+          </b-button>
+        </template>
+      </vuetable>
+    </b-card>
     <b-card v-if="resultsData" title="Results" tag="article" class="mb-2">
       <vuetable
         v-if="resultsData" id="AthleteResults" ref="athleteResults" :api-mode="false" :data="resultsData"
@@ -36,6 +48,7 @@ export default {
       fieldsAthleteResults: FieldsDefs,
       css: CssConfig,
       resultsData: [],
+      bestResultsData: [],
       athleteId: this.$route.params.id,
     }
   },
@@ -52,6 +65,14 @@ export default {
       client.action(schema, action, params).then((result) => {
         // Return value is in 'athletes'
         this.resultsData = result.data
+        
+        const groupedMap = [...result.data.sort((a, b) => (a.total_time > b.total_time) - (a.total_time < b.total_time))
+          .reduce((r,c) => (r.set(c.distance.id, r.has(c.distance.id) ? 
+          [...r.get(c.distance.id), c] : [c]), r), new Map()).values()]
+
+        groupedMap.forEach((element) => {
+          this.bestResultsData.push(element[0])
+        }, this)
       })
     },
     eventClick (value) {
