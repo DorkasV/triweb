@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-container>
+    <!-- <b-container>
       <b-card-group deck>
         <b-card no-body
           img-top
@@ -51,7 +51,7 @@
           </router-link>
         </b-card>
       </b-card-group>
-    </b-container>
+    </b-container> -->
     <!-- <b-container fluid> -->
       <router-view></router-view>
     <!-- </b-container> -->

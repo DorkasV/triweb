@@ -6,7 +6,8 @@ import Vue from 'vue'
 // import VueResource from 'vue-resource'
 import Vuetable from 'vuetable-2'
 // import moment from 'moment'
-import ShowEntries from '~/components/ShowEntries.vue'
+import ShowEntries from '~/components/ShowEntries'
+import Footer from '~/components/Footer'
 
 import {
   VuetablePagination,
@@ -20,3 +21,4 @@ Vue.component("vuetable", Vuetable)
 Vue.component("vuetable-pagination", VuetablePagination)
 Vue.component("vuetable-pagination-info", VuetablePaginationInfo)
 Vue.component('v-show-entries', ShowEntries)
+Vue.component('v-footer', Footer)

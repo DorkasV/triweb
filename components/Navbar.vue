@@ -1,7 +1,9 @@
 <template>
-  <b-navbar toggleable="md">
+  <b-navbar toggleable="md" type="light" variant="light">
     <b-navbar-toggle target="nav_collapse"/>
-    <b-navbar-brand :to="{ name: 'index' }">Tristats</b-navbar-brand>
+    <b-navbar-brand :to="{ name: 'index' }">
+      <b-img fluid src="../assets/images/tri_logo.jpg" alt="Logo" style="height:50px;"></b-img>
+    </b-navbar-brand>
     <b-collapse id="nav_collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item

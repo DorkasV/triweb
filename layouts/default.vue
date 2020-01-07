@@ -4,6 +4,7 @@
     <div class="container-fluid">
       <nuxt />
     </div>
+    <v-footer/>
   </div>
 </template>
 
