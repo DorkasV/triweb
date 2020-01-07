@@ -9,7 +9,7 @@
         <b-nav-item
           v-for="i in items"
           :key="i.name"
-          :to="{ name: i.name }">{{ i.title }}</b-nav-item>
+          :to="{ name: i.name }"><font-awesome-icon :icon="i.icon" /> {{ i.title }}</b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -20,10 +20,10 @@ export default {
   data () {
     return {
       items: [
-        { name: 'athletes', title: 'Athletes' },
-        { name: 'events', title: 'Events' },
-        { name: 'results', title: 'Results' },
-        { name: 'teams', title: 'Teams' },
+        { name: 'athletes', title: 'Athletes', icon: 'address-card' },
+        { name: 'events', title: 'Events', icon: 'calendar-alt' },
+        { name: 'results', title: 'Results', icon: 'clipboard-list' },
+        { name: 'teams', title: 'Teams', icon: 'users' },
       ]
     }
   }

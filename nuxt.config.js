@@ -70,7 +70,7 @@ export default {
   */
   proxy: [
     [['/api', '/admin', '/static'], {
-      target: process.env.TRIAPI_URL || 'http://127.0.0.1:8000',
+      target: /*process.env.TRIAPI_URL*/'https://tristats.lt' || 'http://127.0.0.1:8000',
       xfwd: true,
     }],
   ],

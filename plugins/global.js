@@ -6,6 +6,10 @@ import Vue from 'vue'
 // import VueResource from 'vue-resource'
 import Vuetable from 'vuetable-2'
 // import moment from 'moment'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faUserSecret, faUsers, faCalendarAlt, faSwimmer, faClipboardList,
+faAddressCard } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import ShowEntries from '~/components/ShowEntries'
 import Footer from '~/components/Footer'
 
@@ -14,6 +18,10 @@ import {
   VuetablePaginationInfo
 } from 'vuetable-2'
 
+library.add(faUserSecret, faUsers, faCalendarAlt, faSwimmer, faClipboardList, faAddressCard)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+Vue.config.productionTip = false
 // Vue.use(BootstrapVue)
 // Vue.use(VueRouter)
 // Vue.use(VueResource)
