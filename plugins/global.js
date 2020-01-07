@@ -8,7 +8,7 @@ import Vuetable from 'vuetable-2'
 // import moment from 'moment'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUserSecret, faUsers, faCalendarAlt, faSwimmer, faClipboardList,
-faAddressCard } from '@fortawesome/free-solid-svg-icons'
+faAddressCard, faTrophy } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import ShowEntries from '~/components/ShowEntries'
 import Footer from '~/components/Footer'
@@ -18,7 +18,7 @@ import {
   VuetablePaginationInfo
 } from 'vuetable-2'
 
-library.add(faUserSecret, faUsers, faCalendarAlt, faSwimmer, faClipboardList, faAddressCard)
+library.add(faUserSecret, faUsers, faCalendarAlt, faSwimmer, faClipboardList, faAddressCard, faTrophy)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false

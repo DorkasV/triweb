@@ -24,6 +24,7 @@ export default {
         { name: 'events', title: 'Events', icon: 'calendar-alt' },
         { name: 'results', title: 'Results', icon: 'clipboard-list' },
         { name: 'teams', title: 'Teams', icon: 'users' },
+        { name: 'results', title: 'Best Results', icon: 'trophy' }
       ]
     }
   }
