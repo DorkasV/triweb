@@ -18,12 +18,17 @@
       </b-col>
     </b-row>
     <vuetable
-      id="Best" ref="bestPerformance" api-url="/api/results/" :per-page="perPage" pagination-path='pagination'
-      data-path='data' @vuetable:pagination-data="onPaginationData" :append-params="moreParams"
+      id="Best" ref="bestPerformance" api-url="/api/results/" :per-page="perPage"
+      data-path='data' :append-params="moreParams"
       :fields="fields" :css="css.table" @vuetable:row-clicked="(dataItem, event) => rowClicked(dataItem, event)"
     >
       <template slot="id" slot-scope="props">
-        {{props.rowIndex + 1}}
+        <template v-if="bestThree(props.rowIndex)">
+          <font-awesome-icon icon="trophy" :style="{ color: trophy(props.rowIndex) }" />
+        </template>
+        <template v-else>
+          {{props.rowIndex}}
+        </template>
       </template>
       <template slot="event" slot-scope="props">
         <b-button size="sm" variant="light" @click.stop="eventClick(props.rowData.event.id)">
@@ -148,9 +153,9 @@ export default {
         id: value.team.id
       }})
     },
-    onPaginationData(paginationData) {
-      this.$refs.pagination.setPaginationData(paginationData)
-    },
+    // onPaginationData(paginationData) {
+    //   this.$refs.pagination.setPaginationData(paginationData)
+    // },
     onChangePage(page) {
       this.$refs.bestPerformance.changePage(page)
     },
@@ -162,6 +167,23 @@ export default {
         return
       }
       return value.substring(0,11)
+    },
+    bestThree (value) {
+      if (value === 0 || value === 1 || value === 2) {
+        return true
+      }
+      return false
+    },
+    trophy (value) {
+      if (value === 0) {
+        return 'gold'
+      }
+      else if (value === 1) {
+        return 'silver'
+      }
+      else {
+        return '#b08d57'
+      }
     }
   }
 }
