@@ -25,10 +25,16 @@
       </b-col>
     </b-row>
 
+    <div v-show="loading" class="overlay flex flex-column items-center justify-center">
+			<b-spinner label="Loading..."></b-spinner>
+		</div>
+
     <vuetable
       id="Athletes" ref="athletes" :api-url="`/api/athletes/`" :per-page="perPage" pagination-path='pagination'
       :sort-order="sortOrder" :append-params="moreParams" data-path='data' @vuetable:pagination-data="onPaginationData"
       :fields="fields" :css="css.table" @vuetable:row-clicked="(dataItem, event) => rowClicked(dataItem, event)"
+      @vuetable:loading="onLoading" 
+			@vuetable:loaded="onLoaded"
     >
       <template slot="athlete" slot-scope="props">
         <b-button size="sm" variant="light" @click.stop="athleteClick(props.rowData.id)">
@@ -71,7 +77,8 @@ export default {
       ],
       moreParams: {
         search: ''
-      }
+      },
+      loading: true
     }
   },
   head () {
@@ -127,6 +134,12 @@ export default {
         return
       }
       return `${value.name}, ${value.country.name}`
+    },
+    onLoading() {
+      this.loading = true
+    },
+    onLoaded() {
+      this.loading = false
     }
   }
 }

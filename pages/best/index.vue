@@ -17,10 +17,16 @@
         </b-row>
       </b-col>
     </b-row>
+    
+    <div v-show="loading" class="overlay flex flex-column items-center justify-center">
+			<b-spinner label="Loading..."></b-spinner>
+		</div>
     <vuetable
       id="Best" ref="bestPerformance" api-url="/api/results/" :per-page="perPage"
       data-path='data' :append-params="moreParams"
       :fields="fields" :css="css.table" @vuetable:row-clicked="(dataItem, event) => rowClicked(dataItem, event)"
+      @vuetable:loading="onLoading" 
+			@vuetable:loaded="onLoaded"
     >
       <template slot="id" slot-scope="props">
         <template v-if="bestThree(props.rowIndex)">
@@ -76,7 +82,8 @@ export default {
         distance: 1,
         search: new Date().getFullYear(),
         ordering: 'total_time'
-      }
+      },
+      loading: true
     }
   },
   computed: {
@@ -184,6 +191,12 @@ export default {
       else {
         return '#b08d57'
       }
+    },
+    onLoading() {
+      this.loading = true
+    },
+    onLoaded() {
+      this.loading = false
     }
   }
 }
@@ -193,4 +206,26 @@ export default {
 #Best>tbody {
   cursor: pointer;
 }
+
+.overlay { 
+		position: absolute; 
+		top: 0; left: 0; 
+		/* bottom: 0%; right: 0%; */
+		width: 100%; height: 100%; 
+		z-index: 10; 
+		background-color: rgba(0,0,0,0.5);
+		/*dim the background*/ 
+	}
+	.flex {
+		display: flex;
+	}
+	.flex-column {
+		flex-direction: column;
+	}
+	.items-center {
+		align-items: center;
+	}
+	.justify-center {
+		justify-content: center;
+	}
 </style>
