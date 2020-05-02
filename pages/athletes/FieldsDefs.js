@@ -5,12 +5,12 @@ export default [
     dataClass: 'text-center',
     titleClass: 'text-center'
   },
-  {
-    title: 'Birth date',
-    name: 'birth_date',
-    dataClass: 'text-center',
-    titleClass: 'text-center'
-  },
+  //{
+  //  title: 'Birth date',
+  //  name: 'birth_date',
+  //  dataClass: 'text-center',
+  //  titleClass: 'text-center'
+  //},
   {
     title: 'Age',
     name: 'birth_date',
