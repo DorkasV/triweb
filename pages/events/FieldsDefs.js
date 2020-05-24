@@ -18,11 +18,11 @@ export default [
     dataClass: 'text-center',
     titleClass: 'text-center'
   },
-  {
-    title: 'Athletes',
-    name: 'athlete',
-    callback: 'athletesInEvent',
-    dataClass: 'text-center',
-    titleClass: 'text-center'
-  },
+  // {
+  //   title: 'Athletes',
+  //   name: 'athlete',
+  //   callback: 'athletesInEvent',
+  //   dataClass: 'text-center',
+  //   titleClass: 'text-center'
+  // },
 ]
