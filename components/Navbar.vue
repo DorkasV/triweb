@@ -20,11 +20,11 @@ export default {
   data () {
     return {
       items: [
-        { name: 'athletes', title: 'Athletes', icon: 'address-card' },
-        { name: 'events', title: 'Events', icon: 'calendar-alt' },
-        { name: 'results', title: 'Results', icon: 'clipboard-list' },
-        { name: 'teams', title: 'Teams', icon: 'users' },
-        { name: 'best', title: 'Best Results', icon: 'trophy' }
+        { name: 'athletes', title: 'Dalyviai', icon: 'address-card' },
+        { name: 'events', title: 'Renginiai', icon: 'calendar-alt' },
+        { name: 'results', title: 'Rezultatai', icon: 'clipboard-list' },
+        { name: 'teams', title: 'Komandos', icon: 'users' },
+        { name: 'best', title: 'Geriausi rezultatai', icon: 'trophy' }
       ]
     }
   }
