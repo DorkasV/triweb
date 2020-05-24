@@ -1,57 +1,25 @@
 <template>
   <div id="app">
-    <!-- <b-container>
-      <b-card-group deck>
-        <b-card no-body
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2 cardClass"
-        >
-          <router-link :to="{name: 'athletes'}" tag="li">
-            <b-card-body>
-              Athletes
-            </b-card-body>
-          </router-link>
-        </b-card>
-        <b-card no-body
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2 cardClass"
-        >
-          <router-link :to="{name: 'events'}" tag="li">
-            <b-card-body>
-              Events
-            </b-card-body>
-          </router-link>
-        </b-card>
-        <b-card no-body
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2 cardClass"
-        >
-          <router-link :to="{name: 'results'}" tag="li">
-            <b-card-body>
-              Results
-            </b-card-body>
-          </router-link>
-        </b-card>
-        <b-card no-body
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2 cardClass"
-        >
-          <router-link :to="{name: 'teams'}" tag="li">
-            <b-card-body>
-              Teams
-            </b-card-body>
-          </router-link>
-        </b-card>
-      </b-card-group>
-    </b-container> -->
+    <b-container fluid>
+      <b-row>
+        <b-col md="4" offset-md="4">
+          <b-card
+            title="Duomenų įvedimas"
+            img-src="https://picsum.photos/600/300/?image=1077"
+            img-alt="Image"
+            img-top
+            tag="article"
+            class="mb-2"
+          >
+            <b-card-text>
+              Užregistruok savo triatlono rezultatą!
+            </b-card-text>
+            <b-button href="https://docs.google.com/forms/d/e/1FAIpQLSdPT_lRe9ElweK_j6TO2gxTY1Rcgb2FWtl6_JFH2hqED127zw/viewform?fbzx=5557622822347829040&fbclid=IwAR2cz3KAU--imuSHBgMzNtIXDw2PT9MP50MVTFyQsyXN_RQUkoPZEPwiNb8" variant="primary">Registracija</b-button>
+            <b-button href="http://shorturl.at/avLQ3" variant="info">Taisyklės</b-button>
+          </b-card>
+        </b-col>
+      </b-row>
+    </b-container>
     <!-- <b-container fluid> -->
       <router-view></router-view>
     <!-- </b-container> -->
