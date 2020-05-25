@@ -113,7 +113,7 @@ export default {
       if (!value) {
         return
       }
-      return moment().diff(value, 'years', false)
+      return '-' // moment().diff(value, 'years', false)
     },
     onPaginationData(paginationData) {
       this.$refs.pagination.setPaginationData(paginationData)
