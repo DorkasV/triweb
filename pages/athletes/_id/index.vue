@@ -91,7 +91,7 @@ export default {
       if (!value) {
         return ''
       }
-      return moment().diff(value, 'years', false)
+      return '-' // moment().diff(value, 'years', false)
     },
     runPace (data) {
       // return 60/(distance/1000/time/24)
