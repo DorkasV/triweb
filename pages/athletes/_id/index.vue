@@ -66,7 +66,8 @@ export default {
         // Return value is in 'athletes'
         this.resultsData = JSON.parse(JSON.stringify(result.data))
         
-        const groupedMap = [...result.data.sort((a, b) => (a.total_time > b.total_time) - (a.total_time < b.total_time))
+        const groupedMap = [...result.data.filter(x => x.total_place)
+          .sort((a, b) => (a.total_time > b.total_time) - (a.total_time < b.total_time))
           .reduce((r,c) => (r.set(c.distance.id, r.has(c.distance.id) ? 
           [...r.get(c.distance.id), c] : [c]), r), new Map()).values()]
 
