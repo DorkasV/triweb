@@ -103,6 +103,7 @@ export default {
 
       if (this.yearsData)
         all = this.yearsData.map(x => {
+          console.log('x', x)
           return `${x.event_date.substring(0, 4)}`
         })
 
