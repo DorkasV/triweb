@@ -103,7 +103,7 @@ export default {
 
       if (this.yearsData)
         all = this.yearsData.map(x => {
-          return `${x.event.event_date.substring(0, 4)}`
+          return `${x.event_date.substring(0, 4)}`
         })
 
       all.splice(0, 0, '--- year ---')
