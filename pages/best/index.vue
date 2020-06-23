@@ -103,12 +103,11 @@ export default {
 
       if (this.yearsData)
         all = this.yearsData.map(x => {
-          console.log('x', x)
           return `${x.event_date.substring(0, 4)}`
         })
 
       all.splice(0, 0, '--- year ---')
-      all.splice(1, 0, new Date().getFullYear())
+      // all.splice(1, 0, new Date().getFullYear())
       return all.filter((v, i, a) => a.indexOf(v) === i)
     }
   },
