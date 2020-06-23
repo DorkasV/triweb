@@ -74,7 +74,9 @@ export default {
       selectedDistance: 1,
       selectedYear: new Date().getFullYear(),
       distancesData: [],
-      yearsData: [],
+      yearsData: [
+        '2019', '2020'
+      ],
       perPage: 100,
       fields: Fields,
       css: CssConfig,
@@ -139,7 +141,7 @@ export default {
       let action = ["results", "list"]
       client.action(schema, action).then((result) => {
           // Return value is in 'result'
-          this.yearsData = result.data
+          // this.yearsData = result.data
       })
     },
     eventClick (value) {
