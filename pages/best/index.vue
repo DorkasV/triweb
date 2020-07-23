@@ -1,21 +1,24 @@
 <template>
   <b-container fluid>
     <b-row>
-      <b-col cols="4">
+      <b-col cols="5">
         <b-row>
           <!-- <b-col cols="3">
             <div class="form-group">
               <v-show-entries v-model="perPage" @change="updateTable"></v-show-entries>
             </div>
           </b-col> -->
-          <b-col cols="6">
+          <b-col cols="5">
             <b-form-select v-model="selectedDistance" :options="distanceOptions" @change="selectedDistanceChange"></b-form-select>
           </b-col>
           <b-col cols="3">
             <b-form-select v-model="selectedYear" :options="yearsOptions" @change="selectedYearChange"></b-form-select>
           </b-col>
-          <b-col cols="3">
+          <b-col cols="2">
             <b-form-select v-model="selectedGender" :options="genderOptions" @change="selectedGenderChange"></b-form-select>
+          </b-col>
+          <b-col cols="2">
+            <b-form-select v-model="selectedGroup" :options="groupOptions" @change="selectedGroupChange"></b-form-select>
           </b-col>
         </b-row>
       </b-col>
@@ -77,6 +80,7 @@ export default {
       selectedDistance: 1,
       selectedYear: new Date().getFullYear(),
       selectedGender: null,
+      selectedGroup: null,
       distancesData: [],
       yearsData: [],
       perPage: 100,
@@ -88,7 +92,10 @@ export default {
         ordering: 'total_time'
       },
       loading: true,
-      genderOptions: ['M', 'F']
+      genderOptions: ['', 'M', 'F'],
+      groupOptions: ['', 'V20', 'M20', 'V25', 'M25', 'V30', 'M30', 'V35', 'M35', 'V40', 'M40', 'V45', 'M45', 'V50', 'M50',
+        'V55', 'V60', 'V65', 'V70', 'V14', 'M14', 'VS', 'VM', 'MS', 'MM', 'Estf.', 'Akva', 'V16', 'M16', 'AV14', 'AM14',
+        'V12', 'M12', 'V10', 'M10', 'AVM', 'AMM']
     }
   },
   computed: {
@@ -135,6 +142,10 @@ export default {
     },
     selectedGenderChange () {
       this.moreParams.athlete__gender = this.selectedGender
+      this.updateTable()
+    },
+    selectedGroupChange () {
+      this.moreParams.group = this.selectedGroup
       this.updateTable()
     },
     getDistancesData () {
