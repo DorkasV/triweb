@@ -1,18 +1,21 @@
 <template>
   <b-container fluid>
     <b-row>
-      <b-col cols="3">
+      <b-col cols="4">
         <b-row>
           <!-- <b-col cols="3">
             <div class="form-group">
               <v-show-entries v-model="perPage" @change="updateTable"></v-show-entries>
             </div>
           </b-col> -->
-          <b-col cols="8">
+          <b-col cols="6">
             <b-form-select v-model="selectedDistance" :options="distanceOptions" @change="selectedDistanceChange"></b-form-select>
           </b-col>
-          <b-col cols="4">
+          <b-col cols="3">
             <b-form-select v-model="selectedYear" :options="yearsOptions" @change="selectedYearChange"></b-form-select>
+          </b-col>
+          <b-col cols="3">
+            <b-form-select v-model="selectedGender" :options="genderOptions" @change="selectedGenderChange"></b-form-select>
           </b-col>
         </b-row>
       </b-col>
@@ -73,6 +76,7 @@ export default {
     return {
       selectedDistance: 1,
       selectedYear: new Date().getFullYear(),
+      selectedGender: null,
       distancesData: [],
       yearsData: [],
       perPage: 100,
@@ -83,7 +87,8 @@ export default {
         search: new Date().getFullYear(),
         ordering: 'total_time'
       },
-      loading: true
+      loading: true,
+      genderOptions: ['M', 'F']
     }
   },
   computed: {
@@ -122,11 +127,15 @@ export default {
     },
     selectedDistanceChange () {
       this.moreParams.distance = this.selectedDistance
-      this.$refs.bestPerformance.refresh()
+      this.updateTable()
     },
     selectedYearChange () {
       this.moreParams.search = this.selectedYear
-      this.$refs.bestPerformance.refresh()
+      this.updateTable()
+    },
+    selectedGenderChange () {
+      this.moreParams.athlete__gender = this.selectedGender
+      this.updateTable()
     },
     getDistancesData () {
       let action = ["distances", "list"]
