@@ -154,7 +154,7 @@ export default {
       this.updateTable()
     },
     selectedGroupChange () {
-      this.moreParams.group = this.selectedGroup
+      this.moreParams.group = this.selectedGroup.value
       this.updateTable()
     },
     getDistancesData () {
