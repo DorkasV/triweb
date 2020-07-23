@@ -93,9 +93,18 @@ export default {
       },
       loading: true,
       genderOptions: ['', 'M', 'F'],
-      groupOptions: ['', 'V20', 'M20', 'V25', 'M25', 'V30', 'M30', 'V35', 'M35', 'V40', 'M40', 'V45', 'M45', 'V50', 'M50',
-        'V55', 'V60', 'V65', 'V70', 'V14', 'M14', 'VS', 'VM', 'MS', 'MM', 'Estf.', 'Akva', 'V16', 'M16', 'AV14', 'AM14',
-        'V12', 'M12', 'V10', 'M10', 'AVM', 'AMM']
+      groupOptions: [
+        { value: null, text: '' },
+        { value: 2, text: 'V20' }, { value: 1, text: 'M20' }, { value: 4, text: 'V25' }, { value: 3, text: 'M25' },
+        { value: 6, text: 'V30' }, { value: 5, text: 'M30' }, { value: 8, text: 'V35' }, { value: 7, text: 'M35' },
+        { value: 10, text: 'V40' }, { value:9, text: 'M40' }, { value: 12, text: 'V45' }, { value: 11, text: 'M45' },
+        { value: 14, text: 'V50' }, { value: 13, text: 'M50' }, { value: 15, text: 'V55' }, { value: 16, text: 'V60' },
+        { value: 17, text: 'V65' }, { value: 18, text: 'V70' }, { value: 19, text: 'M14' }, { value: 20, text: 'V14' },
+        { value: 21, text: 'VM' }, { value: 22, text: 'MS' }, { value: 23, text: 'MS' }, { value: 24, text: 'MM' },
+        { value: 25, text: 'Estf.' }, { value: 26, text: 'Akva' }, { value: 27, text: 'V12' }, { value: 28, text: 'M12' },
+        { value: 29, text: 'V10' }, { value: 30, text: 'M10' }, { value: 31, text: 'AVM' }, { value: 32, text: 'AMM' },
+        { value: 33, text: 'V16' }, { value: 34, text: 'M16' }, { value: 35, text: 'AV14' }, { value: 36, text: 'AM14' }
+      ]
     }
   },
   computed: {
