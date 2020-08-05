@@ -38,7 +38,8 @@
     >
       <template slot="athlete" slot-scope="props">
         <b-button size="sm" variant="light" @click.stop="athleteClick(props.rowData.id)">
-          {{props.rowData.first_name}} {{props.rowData.last_name}}
+          <!-- {{props.rowData.first_name}} {{props.rowData.last_name}} -->
+          -
         </b-button>
       </template>
       <template slot="team" slot-scope="props">
